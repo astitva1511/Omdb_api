@@ -12,6 +12,7 @@ export class MovieComponent implements OnInit {
   
   imdbID: string; 
   searchMovieByidSub: Subscription;
+  details : any;
 
 
   constructor(
@@ -37,7 +38,8 @@ export class MovieComponent implements OnInit {
   }
 
   searchSuccess(res) {
-    console.log(res)
+    this.details = res;
+    console.log(this.details.Title);
   }
 
   searchError(err) {
