@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy, Input } from '@angular/core';
 import { OmdbService } from '../api/omdb.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -13,7 +13,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   movies = [];
   movieTitle: string; 
   searchMovieSub: Subscription;
-
+  
 
   constructor(
     private router: Router,
@@ -25,6 +25,7 @@ export class SearchComponent implements OnInit, OnDestroy {
     // OnInit, OnChanges ( Input Changes ), OnDestoy
     this.movieTitle = this.omdbService.movieTitle;
     this.searchMovies()
+    
   }
 
   ngOnDestroy() {
@@ -51,5 +52,10 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.omdbService.movieTitle = this.movieTitle;
     this.searchMovies()
   }
-
+  
+  movieDetails(imdbID : string){
+    this.omdbService.imdbID = imdbID;
+    this.router.navigate(['/movie/:'+ imdbID]);
+    
+  }
 }
