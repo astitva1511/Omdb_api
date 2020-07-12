@@ -6,10 +6,83 @@
 </head>
 <body>
 
-<div>
-  <h3>{{details.Title}}</h3>
-  <p>We love music!</p>
-  <p>We have created a fictional band website. Lorem ipsum..</p>
+<div class ="body">
+    <div class="container header">
+        <div class="row">
+            <div class="col-sm-10 movi"> 
+                <h5 class="moviTitle">{{details.Title}} ({{details.Year}})</h5>
+                <br/>
+                <p class="moviRate">{{details.Rated}} ------ {{details.Released}} ------- {{details.Genre}}------{{details.Runtime}} ({{details.Type}})</p>
+            </div>
+            <div class="col-sm-2">
+                <table class ="tableFor">
+                    <tr *ngFor="let rated of details.Ratings">
+                        <th>{{rated.Source}}</th>
+
+                        <th class="imdbFor" >{{rated.Value}}</th>
+                    </tr>
+                    <tr>
+                        <th >IMDB Votes</th>
+                        <th class ="imdbFor">{{details.imdbVotes}}</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+    
+    </div>
+    <section>    
+        <div class="row">
+            <div class="col-sm-9">
+                <p class = "production">{{details.Production}}</p>
+                <div class="plot">
+                    <h3 class ="plot-heading">Plot</h3>>
+                    <p class="para">{{details.Plot}}</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <img class="image"src="{{details.Poster}}"/>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Actors</button>
+            <div class="dropdown-content">
+              <a href="*" *ngFor ="let actor of details.Actors.split(',')">{{actor}}</a>
+            </div>
+          </div>
+    
+          <div class="dropdown">
+            <button class="dropbtn">Director</button>
+            <div class="dropdown-content" >
+              <a href="#" *ngFor ="let director of details.Director.split(',')">{{director}}</a>
+              
+            </div>
+          </div>
+    
+          <div class="dropdown">
+            <button class="dropbtn">Awards</button>
+            <div class="dropdown-content">
+              <a href="#">{{details.Awards}}</a>
+              
+            </div>
+          </div>
+    
+          <div class="dropdown">
+            <button class="dropbtn">Languages</button>
+            <div class="dropdown-content">
+              <a href="#" *ngFor ="let language of details.Language.split(',')">{{language}}</a>
+            </div>
+           </div>
+    </section>
+    
+    <div class="fixed-footer">
+        <div class="container">Copyright &copy; 2020 ---------- primeprojects.club</div>        
+    </div>
+    
+ 
+
+ 
+  
 </div>
 
 </body>
