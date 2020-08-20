@@ -14,7 +14,6 @@ export class SearchComponent implements OnInit, OnDestroy {
   movieTitle: string; 
   searchMovieSub: Subscription;
   
-
   constructor(
     private router: Router,
     private omdbService: OmdbService
