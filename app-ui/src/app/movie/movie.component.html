@@ -47,14 +47,14 @@
         <div class="dropdown">
             <button class="dropbtn">Actors</button>
             <div class="dropdown-content">
-              <a href="*" *ngFor ="let actor of details.Actors.split(',')">{{actor}}</a>
+              <a *ngFor ="let actor of details.Actors.split(',')">{{actor}}</a>
             </div>
           </div>
     
           <div class="dropdown">
             <button class="dropbtn">Director</button>
             <div class="dropdown-content" >
-              <a href="#" *ngFor ="let director of details.Director.split(',')">{{director}}</a>
+              <a *ngFor ="let director of details.Director.split(',')">{{director}}</a>
               
             </div>
           </div>
@@ -62,7 +62,7 @@
           <div class="dropdown">
             <button class="dropbtn">Awards</button>
             <div class="dropdown-content">
-              <a href="#">{{details.Awards}}</a>
+              <a>{{details.Awards}}</a>
               
             </div>
           </div>
@@ -70,7 +70,7 @@
           <div class="dropdown">
             <button class="dropbtn">Languages</button>
             <div class="dropdown-content">
-              <a href="#" *ngFor ="let language of details.Language.split(',')">{{language}}</a>
+              <a *ngFor ="let language of details.Language.split(',')">{{language}}</a>
             </div>
            </div>
     </section>
