@@ -81,7 +81,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             this.movieTitle = '';
           }
 
-          var url = 'https://primeprojects.club:3003/omdb/search?title=' + this.movieTitle;
+          var url = 'http://primeprojects.club:3003/omdb/search?title=' + this.movieTitle;
           return this.http.get(url);
         }
       }, {
@@ -91,7 +91,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             this.imdbID = '';
           }
 
-          var url = 'https://primeprojects.club:3003/omdb/imdb/' + this.imdbID;
+          var url = 'http://primeprojects.club:3003/omdb/imdb/' + this.imdbID;
           return this.http.get(url);
         }
       }]);

@@ -46,14 +46,14 @@ class OmdbService {
         if (this.movieTitle === undefined || this.movieTitle === null) {
             this.movieTitle = '';
         }
-        const url = 'https://primeprojects.club:3003/omdb/search?title=' + this.movieTitle;
+        const url = 'http://primeprojects.club:3003/omdb/search?title=' + this.movieTitle;
         return this.http.get(url);
     }
     searchMoviesByid() {
         if (this.imdbID === undefined || this.imdbID === null) {
             this.imdbID = '';
         }
-        const url = 'https://primeprojects.club:3003/omdb/imdb/' + this.imdbID;
+        const url = 'http://primeprojects.club:3003/omdb/imdb/' + this.imdbID;
         return this.http.get(url);
     }
 }
